@@ -9,31 +9,30 @@ Abaixo está o Diagrama Entidade-Relacionamento (DER) que representa a estrutura
 ```mermaid
 erDiagram
     USUARIO {
-        string id PK "Gerado automaticamente"
-        string nomeGuardiao "Usado para o login"
-        string senha "Senha do códice"
+        string id PK
+        string nomeGuardiao
+        string senha
     }
 
-    OBRA ||--o{ PERSONAGEM : "possui elenco de"
-    }
+    OBRA ||--o{ PERSONAGEM : possui
 
     OBRA {
-        string id PK "Identificador único da obra"
-        string titulo "Ex: The Legend of Zelda"
-        string plataforma "Ex: Nintendo Switch"
+        string id PK
+        string titulo
+        string plataforma
         int anoLancamento
-        string urlCapa "Caminho da imagem"
-        string descricao "Lore e sinopse geral"
+        string urlCapa
+        string descricao
     }
 
     PERSONAGEM {
-        string id PK "Identificador único do personagem"
-        string obraId FK "Vínculo com a Obra"
-        string nome "Ex: Link"
+        string id PK
+        string obraId FK
+        string nome
         int idade
-        string poderes "Habilidades ou classe"
-        string biografia "Lore individual"
-        string urlAvatar "Caminho da imagem circular"
+        string poderes
+        string biografia
+        string urlAvatar
     }
 
 2. Dicionário de Dados
@@ -77,7 +76,7 @@ A aplicação consumirá os dados via API local simulada. Abaixo os principais e
 4. Estrutura do Banco de Dados (db.json)
 
 Esta é a representação em formato JSON do banco de dados simulado, servindo de base para o desenvolvimento do Front-end e para a estruturação do LocalStorage ou JSON Server.
-Snippet de código
+JSON
 
 {
     "usuarios": [
