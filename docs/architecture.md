@@ -34,6 +34,7 @@ erDiagram
         string biografia
         string urlAvatar
     }
+```
 
 2. Dicionário de Dados
 
@@ -79,42 +80,45 @@ Esta é a representação em formato JSON do banco de dados simulado, servindo d
 JSON
 
 {
-    "usuarios": [
-        {
-            "id": "1",
-            "nomeGuardiao": "Aldous",
-            "senha": "senha_antiga"
-        }
-    ],
-    "obras": [
-        {
-            "id": "1",
-            "titulo": "Final Fantasy VII Remake",
-            "plataforma": "PlayStation 5",
-            "anoLancamento": 2020,
-            "urlCapa": "img/capas/ff7.jpg",
-            "descricao": "A cidade de Midgar é controlada pela megacorporação Shinra..."
-        }
-    ],
-    "personagens": [
-        {
-            "id": "1",
-            "obraId": "1",
-            "nome": "Cloud Strife",
-            "idade": 21,
-            "poderes": "Manejo da Buster Sword, Magia Materia",
-            "biografia": "Um ex-SOLDIER de primeira classe que se tornou mercenário em Midgar.",
-            "urlAvatar": "img/avatares/cloud.jpg"
-        },
-        {
-            "id": "2",
-            "obraId": "1",
-            "nome": "Aerith Gainsborough",
-            "idade": 22,
-            "poderes": "Magia Branca, Comunicação com o Planeta",
-            "biografia": "A última dos Cetra, uma raça ancestral com fortes laços com a magia do planeta.",
-            "urlAvatar": "img/avatares/aerith.jpg"
-        }
-    ]
+"usuarios": [
+{
+"id": "1",
+"nomeGuardiao": "Aldous",
+"senha": "senha_antiga"
 }
+],
+"obras": [
+{
+"id": "1",
+"titulo": "Final Fantasy VII Remake",
+"plataforma": "PlayStation 5",
+"anoLancamento": 2020,
+"urlCapa": "img/capas/ff7.jpg",
+"descricao": "A cidade de Midgar é controlada pela megacorporação Shinra..."
+}
+],
+"personagens": [
+{
+"id": "1",
+"obraId": "1",
+"nome": "Cloud Strife",
+"idade": 21,
+"poderes": "Manejo da Buster Sword, Magia Materia",
+"biografia": "Um ex-SOLDIER de primeira classe que se tornou mercenário em Midgar.",
+"urlAvatar": "img/avatares/cloud.jpg"
+},
+{
+"id": "2",
+"obraId": "1",
+"nome": "Aerith Gainsborough",
+"idade": 22,
+"poderes": "Magia Branca, Comunicação com o Planeta",
+"biografia": "A última dos Cetra, uma raça ancestral com fortes laços com a magia do planeta.",
+"urlAvatar": "img/avatares/aerith.jpg"
+}
+]
+}
+
+```
+
 ```
