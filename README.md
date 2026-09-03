@@ -11,20 +11,20 @@ O frontend da aplicação foi desenvolvido com HTML, CSS (utilizando o framework
 Para entender as regras de negócio, o escopo e a arquitetura técnica da aplicação, consulte os documentos abaixo:
 
 - [📄 Product Requirements Document (PRD)](./docs/prd.md) - Visão geral, atores e histórias de usuário.
-- [🛠️ Especificação Técnica (Tech Spec)](./docs/spec.md) - Diagrama de banco de dados (DER), dicionário de dados e rotas da API (JSON Server).
+- [🛠️ Especificação Técnica (Tech Spec)](./docs/architecture.md) - Diagrama de banco de dados (DER), dicionário de dados e rotas da API (JSON Server).
 
 ## 🎨 Design
 
 - [🎨 Design System](./docs/design-system.md) - Identidade visual
-- [🖼️ Protótipo no Figma](https://www.figma.com/file/a1VDbO1aNfZyulQPxT99OE/beleza-em-dia?node-id=3%3A80) - Telas interativas da aplicação.
+- [🖼️ Protótipo no Figma](https://www.figma.com/design/KcZlE9UkCveunfsE37Oz6t/NPCRealm?node-id=4-16&t=kE4eT8YZMvGc3LZ9-1) - Telas interativas da aplicação.
 
 ## 🌐 Site em Produção - GitHub Pages
 
-https://utfpr-gp.github.io/roubank-css/
+https://github.com/Vanyslight/npc-realm.git
 
 ## 💻 Tecnologias e Dependências
 
-- **Framework CSS:** MaterializeCSS
+- **Framework CSS:** Bootstrap 5
 - **JavaScript:**
   - **JQuery** - Para realizar animações e manipulação do DOM.
   - **JSON Server** - Para simular uma API REST.
