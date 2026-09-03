@@ -89,3 +89,6 @@ https://github.com/Vanyslight/npc-realm.git
 - Executar o projeto frontend.
 
 ## 📱 Telas da aplicação
+
+<img width="2600" height="3591" alt="image" src="https://github.com/user-attachments/assets/a2625171-d373-4640-b34b-2950d518224c" />
+<img width="3180" height="2449" alt="image" src="https://github.com/user-attachments/assets/d7ff422d-4c6d-43c8-bee6-61bed6ee93ef" />
