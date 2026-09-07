@@ -119,11 +119,9 @@ JSON
 ]
 }
 
-```
 ## 5. Definição de Versões (Stack Tecnológico)
-
 Para garantir a compatibilidade futura e evitar quebras estruturais, o projeto está amarrado às seguintes versões:
-
+```
 *   **Frontend / UI:** Bootstrap `v5.3.3` (via CDN).
 *   **Manipulação de DOM/Eventos:** jQuery `v3.7.1` (via CDN).
 *   **Suporte de Funcionalidade:** Multiavatar API (Geração procedural de imagens via URL/REST).
