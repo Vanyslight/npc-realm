@@ -119,7 +119,7 @@ JSON
 ]
 }
 
-## 5. Definição de Versões (Stack Tecnológico)
+5. Definição de Versões (Stack Tecnológico)
 Para garantir a compatibilidade futura e evitar quebras estruturais, o projeto está amarrado às seguintes versões:
 ```
 *   **Frontend / UI:** Bootstrap `v5.3.3` (via CDN).
