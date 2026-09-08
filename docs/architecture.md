@@ -78,6 +78,7 @@ A aplicação consumirá os dados via API local simulada. Abaixo os principais e
 
 Esta é a representação em formato JSON do banco de dados simulado, servindo de base para o desenvolvimento do Front-end e para a estruturação do LocalStorage ou JSON Server.
 JSON
+
 ```
 {
 "usuarios": [
@@ -119,8 +120,10 @@ JSON
 ]
 }
 ```
+
 5. Definição de Versões (Stack Tecnológico)
-Para garantir a compatibilidade futura e evitar quebras estruturais, o projeto está amarrado às seguintes versões:
+   Para garantir a compatibilidade futura e evitar quebras estruturais, o projeto está amarrado às seguintes versões:
+
 ```
 *   **Frontend / UI:** Bootstrap `v5.3.3` (via CDN).
 *   **Manipulação de DOM/Eventos:** jQuery `v3.7.1` (via CDN).

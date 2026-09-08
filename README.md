@@ -28,7 +28,7 @@ https://github.com/Vanyslight/npc-realm.git
 - **JavaScript** - Linguagem principal para a lógica de interface e consumo de dados.
 - **jQuery** - Utilizado para realizar animações, manipulação simplificada do DOM e aplicação de plugins de formatação.
 - **JSON Server** - Utilizado para simular o backend via uma API Fake REST, realizando operações de leitura e escrita no `db.json`.
-- **API Pública: Multiavatar API** - Como a essência do sistema é o cadastro criativo na "Forja", uma API de catálogo externo anularia o propósito. A Multiavatar será acionada para gerar avatares procedurais automaticamente, servindo como "foto de perfil" provisória caso o usuário não forneça uma URL de imagem.
+- **API Pública: DiceBear API** - Como a essência do sistema é o cadastro criativo na "Forja", uma API de catálogo externo anularia o propósito. A Multiavatar será acionada para gerar avatares procedurais automaticamente, servindo como "foto de perfil" provisória caso o usuário não forneça uma URL de imagem.
 
 ## ✅ Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
