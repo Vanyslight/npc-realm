@@ -1,0 +1,24 @@
+{
+  "name": "npcrealmproject",
+  "version": "1.0.0",
+  "description": "Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web inspirada em catálogos e enciclopédias virtuais de entretenimento (ex: listagem de jogos/séries, exibição de elencos, fichas detalhadas de personagens e cadastro de novas obras), sendo o diferencial a sua organização visual através de uma temática medieval rústica, que entrega as informações narrativas de forma direta e sem a poluição visual das wikis tradicionais.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vanyslight/npc-realm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Vanyslight/npc-realm/issues"
+  },
+  "homepage": "https://github.com/Vanyslight/npc-realm#readme"
+}
