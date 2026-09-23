@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/Vanyslight/npc-realm/issues"
   },
-  "homepage": "https://github.com/Vanyslight/npc-realm#readme"
+  "homepage": "https://github.com/Vanyslight/npc-realm#readme",
+  "dependencies": {
+    "jquery": "^4.0.0",
+    "uuid": "^14.0.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
 }
