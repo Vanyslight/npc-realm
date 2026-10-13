@@ -1,48 +1,325 @@
 <!doctype html>
+
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NPCREALM</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NPCRealm - Acervo de Reinos</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
+    />
+    <link
+      href="/node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <!-- Google Fonts: EB Garamond & Hanken Grotesk -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,700;1,500;1,700&amp;family=Hanken+Grotesk:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
     />
   </head>
   <body>
-    <header>
-      <nav>
-        <h2>NPCREALM</h2>
-      </nav>
-    </header>
-    <main>
-      <h1>ACERVO DE REINOS</h1>
-      <div>
-        <p>
-          Crônicas esquecidas, mapas manchados de sangue e segredos ocultos
-          aguardam aqueles corajosos o suficiente para explorar.
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark navbar-np sticky-top shadow-sm py-2"
+    >
+      <div class="container-fluid px-lg-5">
+        <a class="navbar-brand d-flex align-items-center gap-3 py-1" href="#">
+          <img
+            alt="NPCRealm Logo"
+            class="d-inline-block align-text-top"
+            height="46"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1WBRswJXvoVedMejPbOkl558K0MSQpqyiXqOJLQsWRmcFlfkFyoRsVilwkDe0M6bRRG_4gE2CTkEU4wf_UpvWAlh6Ur2FKshS4eVIdkp2Y5Y_GDT1CsL2sb8x7rNfo0rBjF7aq5cqjQ8Ir96bAtxwQVt77d0OtA_NQnIXhfimf4IQcsDY_P71qedzyhZUXsnzXEPsW3n8Ho5M5HKfg9wHv5qWGI80v10P-Fezdw4j69pyXD3QN-FL4so3j3"
+          />
+          <span
+            class="font-serif-realm fs-3 fw-bold text-uppercase tracking-wider"
+            style="letter-spacing: 0.18em; color: var(--np-text)"
+            >NPCRealm</span
+          >
+        </a>
+        <button
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Alternar navegação"
+          class="navbar-toggler border-secondary"
+          data-bs-target="#navbarContent"
+          data-bs-toggle="collapse"
+          type="button"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarContent"
+        >
+          <ul class="navbar-nav align-items-lg-center gap-lg-4 my-2 my-lg-0">
+            <li class="nav-item">
+              <a
+                aria-current="page"
+                class="nav-link nav-link-realm active"
+                href="#"
+                >ACERVO</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-realm" href="#">LOGIN</a>
+            </li>
+            <li class="nav-item ms-lg-2">
+              <a
+                class="avatar-btn text-decoration-none shadow-sm"
+                href="#"
+                title="Perfil do Usuário"
+              >
+                <i class="bi bi-person-fill fs-5"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Main Content Area -->
+    <main class="flex-grow-1">
+      <div class="container py-5">
+        <!-- Title Header -->
+        <div class="text-center mb-5">
+          <h1
+            class="font-serif-realm display-5 fw-bold text-uppercase tracking-wider mb-3"
+            style="letter-spacing: 0.14em; color: var(--np-text)"
+          >
+            Acervo de Reinos
+          </h1>
+          <div class="divider-line my-3"></div>
+          <p
+            class="fs-5 mx-auto text-wrap mb-0"
+            style="max-width: 680px; color: var(--np-text-muted)"
+          >
+            Crônicas esquecidas, mapas manchados de sangue e segredos ocultos
+            aguardam aqueles corajosos o suficiente para explorar.
+          </p>
+        </div>
+        <!-- Realm Cards Grid -->
+        <div class="row g-4 justify-content-center">
+          <!-- Card 1: A Cidade de Ferro -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div
+              class="card realm-card h-100 shadow border text-light overflow-hidden"
+            >
+              <div class="card-img-wrapper">
+                <img
+                  alt="A Cidade de Ferro"
+                  class="card-img-top"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaF9lkB_0G2TigMn1zvPRP7-ILmLSWQ8u7bPD9IUImgLqo9AzJAmKJrKtagAWNkMb2a8dcblK2hy3Pfe4tz-pCUGm88K-LGKvsr3dQI9atWaCUaHZPLJH5wVH0UYlfceljEtCKdOSwLd4TkoQTwKprvMBr0lDUpfpu4vzNvaJu61TAm4c9w0a4IeDtu-h-xBWiNQDt-fqnwXyVZLpXBjwugnuezkJew-Y2Q-p9vWmCzbvs08WahGVhFw"
+                />
+                <div class="card-img-gradient"></div>
+                <span
+                  class="badge bg-warning text-dark text-uppercase fw-bold rounded-1 level-badge"
+                  >NÍVEL 5</span
+                >
+              </div>
+              <div class="card-body d-flex flex-column pt-2 px-4 pb-4">
+                <h2
+                  class="card-title font-serif-realm fs-3 fw-bold mb-3"
+                  style="color: var(--np-text)"
+                >
+                  A Cidade de Ferro
+                </h2>
+                <p
+                  class="card-text flex-grow-1 mb-4"
+                  style="
+                    color: var(--np-text-muted);
+                    font-size: 0.98rem;
+                    line-height: 1.55;
+                  "
+                >
+                  Uma metrópole forjada em sangue e metal. Suas ruas ecoam com o
+                  som constante dos martelos e os gritos daqueles que não
+                  pagaram o dízimo.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                  <span class="badge tag-badge rounded-1 text-uppercase"
+                    >URBANO</span
+                  >
+                  <span class="badge tag-badge rounded-1 text-uppercase"
+                    >PERIGO ALTO</span
+                  >
+                </div>
+                <button
+                  class="btn btn-realm w-100 py-2 text-uppercase"
+                  type="button"
+                >
+                  Explorar
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2: Pântano dos Sussurros -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div
+              class="card realm-card h-100 shadow border text-light overflow-hidden"
+            >
+              <div class="card-img-wrapper">
+                <img
+                  alt="Pântano dos Sussurros"
+                  class="card-img-top"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1ahfd2l8CPcT0yRL0hHDI1vUKplqdQCwm7ctc7lDD1CKlDANj0CzsmoZjB7T5prkmb9zpGQ74ojgvnJ_V7CyAgEHSG4Orilm8Kn6twVzj63LndNJkpg2Na6B7JSvXNCuGFDaIC0IPGvwAG-irbWjVbuVy3TajCXPBgALp78NlfnUw3cZLvrUKElVMNyDpie5Fum9kXWIBpvxZ_OubWDxOqVA7z6jEsVk4m6jmBJI6R6Mar1cEcdxEEw"
+                />
+                <div class="card-img-gradient"></div>
+                <span
+                  class="badge bg-warning text-dark text-uppercase fw-bold rounded-1 level-badge"
+                  >NÍVEL 8</span
+                >
+              </div>
+              <div class="card-body d-flex flex-column pt-2 px-4 pb-4">
+                <h2
+                  class="card-title font-serif-realm fs-3 fw-bold mb-3"
+                  style="color: var(--np-text)"
+                >
+                  Pântano dos Sussurros
+                </h2>
+                <p
+                  class="card-text flex-grow-1 mb-4"
+                  style="
+                    color: var(--np-text-muted);
+                    font-size: 0.98rem;
+                    line-height: 1.55;
+                  "
+                >
+                  Um labirinto de águas paradas e árvores retorcidas. Os mortos
+                  não descansam aqui, eles vigiam.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                  <span class="badge tag-badge rounded-1 text-uppercase"
+                    >SELVAGEM</span
+                  >
+                  <span
+                    class="badge tag-badge text-danger border-danger-subtle rounded-1 text-uppercase"
+                    >MALDIÇÃO</span
+                  >
+                </div>
+                <button
+                  class="btn btn-realm w-100 py-2 text-uppercase"
+                  type="button"
+                >
+                  Explorar
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3: Arquivo Profano -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div
+              class="card realm-card h-100 shadow border text-light overflow-hidden"
+            >
+              <div class="card-img-wrapper">
+                <img
+                  alt="Arquivo Profano"
+                  class="card-img-top"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXI3bznIcl1ZnF1uU8TEO15jbU3r0-Z4FYKnNVNJmTyk_T5vZ8e-sryg65kHsERuwbok5Jsr9vrOP3Ywe7Ra3lpqoZHU3nHA3rb8tpPzCLaxBr2jTQvCEbtTlXF-wZsopNvZY0mene6qV4YNyX24k1k-k8cvJPPD_F6oHgbR7cpqMPjhALBkSO56zNR1w5z-fRrrGDOFmLz8IkoBAGZgBPSBaJOHsy40lHfIR0l_PUU68Yy-njqWrwNA"
+                />
+                <div class="card-img-gradient"></div>
+                <span
+                  class="badge bg-warning text-dark text-uppercase fw-bold rounded-1 level-badge"
+                  >NÍVEL 12</span
+                >
+              </div>
+              <div class="card-body d-flex flex-column pt-2 px-4 pb-4">
+                <h2
+                  class="card-title font-serif-realm fs-3 fw-bold mb-3"
+                  style="color: var(--np-text)"
+                >
+                  Arquivo Profano
+                </h2>
+                <p
+                  class="card-text flex-grow-1 mb-4"
+                  style="
+                    color: var(--np-text-muted);
+                    font-size: 0.98rem;
+                    line-height: 1.55;
+                  "
+                >
+                  Conhecimento tem um preço. Neste cofre subterrâneo, grimórios
+                  amaldiçoados aguardam mentes fracas o suficiente para
+                  abri-los.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                  <span class="badge tag-badge rounded-1 text-uppercase"
+                    >SUBTERRÂNEO</span
+                  >
+                  <span class="badge tag-badge rounded-1 text-uppercase"
+                    >MAGIA NEGRA</span
+                  >
+                </div>
+                <button
+                  class="btn btn-realm w-100 py-2 text-uppercase"
+                  type="button"
+                >
+                  Explorar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="mt-auto py-5 border-top border-dark-subtle"
+      style="background-color: #140d01"
+    >
+      <div class="container text-center">
+        <div class="footer-divider mb-4"></div>
+        <p
+          class="font-serif-realm fst-italic fs-4 mb-3"
+          style="color: var(--np-text-muted)"
+        >
+          The realms are deep and full of shadows.
+        </p>
+        <div class="d-flex justify-content-center gap-4 my-3">
+          <i class="bi bi-shield-slash footer-icon" title="Combate"></i>
+          <i class="bi bi-bank footer-icon" title="Fortaleza"></i>
+          <i class="bi bi-radioactive footer-icon" title="Perigo"></i>
+        </div>
+        <p
+          class="text-uppercase small mb-0"
+          style="
+            letter-spacing: 0.15em;
+            color: var(--np-border);
+            font-size: 0.75rem;
+          "
+        >
+          © 2024 NPCRealm. Forged in Darkness.
         </p>
       </div>
-      <!-- cards -->
-    </main>
-    <footer>
-      <h4>The realms are deep and full of shadows.</h4>
-      <div>
-        <!-- icons aqui -->
-      </div>
-      <h5>2026 NPCREALM, FORGED IN DARKNESS</h5>
     </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const isAuthenticated = localStorage.getItem("npcRealm_token");
+        const exploreButtons = document.querySelectorAll(".btn-realm");
+
+        exploreButtons.forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (!isAuthenticated) {
+              const originalText = btn.innerText;
+              btn.innerText = "Requer Login";
+              btn.classList.add("bg-danger", "text-white");
+
+              setTimeout(() => {
+                btn.innerText = originalText;
+                btn.classList.remove("bg-danger", "text-white");
+              }, 2000);
+            } else {
+              console.log("Navegando para o reino...");
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

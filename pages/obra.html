@@ -1,0 +1,375 @@
+<!doctype html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NPCREALM - The Forge</title>
+    <link
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- BEGIN: Navbar (Bootstrap 5 navbar-expand-lg) -->
+    <nav class="navbar navbar-expand-lg realm-navbar sticky-top">
+      <div class="container-xl px-3 px-sm-4">
+        <!-- Brand -->
+        <a
+          class="navbar-brand d-flex align-items-center gap-2 text-decoration-none"
+          href="#"
+        >
+          <div class="brand-icon-box">
+            <i class="bi bi-shield-shaded"></i>
+          </div>
+          <span class="font-cinzel text-white fw-bold tracking-widest fs-5 ms-1"
+            >NPCREALM</span
+          >
+        </a>
+        <!-- Right Nav Links & Profile -->
+        <div class="d-flex align-items-center gap-4 ms-auto">
+          <a class="nav-link-realm text-decoration-none" href="#acervo"
+            >ACERVO</a
+          >
+          <a class="nav-link-realm text-decoration-none" href="#login">LOGIN</a>
+          <a class="profile-pill" href="#profile" title="Perfil do Usuário">
+            <i class="bi bi-person-fill"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- END: Navbar -->
+    <!-- BEGIN: Central Card Container -->
+    <main
+      class="container my-5 flex-grow-1 d-flex align-items-center justify-content-center"
+    >
+      <div class="row justify-content-center w-100">
+        <div class="col-lg-8 col-xl-7">
+          <div class="card card-forge border">
+            <div class="card-body p-4 p-md-5">
+              <!-- Cabeçalho da Forge -->
+              <div class="text-center mb-4">
+                <div class="forge-crest mb-3">
+                  <i class="bi bi-hammer"></i>
+                </div>
+                <h1 class="font-cinzel forge-title fw-bold fs-2 mb-1">FORGE</h1>
+                <div class="forge-divider"></div>
+                <p
+                  class="font-cormorant text-muted-custom fs-5 mb-0"
+                  style="color: #af9b82"
+                >
+                  Aqueça o metal e molde uma nova lenda. Insira os registros nos
+                  tomos eternos.
+                </p>
+              </div>
+              <!-- Navegação por Abas do Bootstrap 5 -->
+              <ul
+                class="nav nav-tabs nav-fill realm-tabs mb-4"
+                id="forgeTabs"
+                role="tablist"
+              >
+                <li class="nav-item" role="presentation">
+                  <button
+                    aria-controls="tab-pane-obra"
+                    aria-selected="true"
+                    class="nav-link active d-inline-flex align-items-center justify-content-center gap-2"
+                    data-bs-target="#tab-pane-obra"
+                    data-bs-toggle="tab"
+                    id="obra-tab"
+                    role="tab"
+                    type="button"
+                  >
+                    <i class="bi bi-book"></i> ADICIONAR OBRA
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    aria-controls="tab-pane-personagem"
+                    aria-selected="false"
+                    class="nav-link d-inline-flex align-items-center justify-content-center gap-2"
+                    data-bs-target="#tab-pane-personagem"
+                    data-bs-toggle="tab"
+                    id="personagem-tab"
+                    role="tab"
+                    type="button"
+                  >
+                    <i class="bi bi-shield"></i> ADICIONAR PERSONAGEM
+                  </button>
+                </li>
+              </ul>
+              <!-- Conteúdo das Abas (tab-content) -->
+              <div class="tab-content" id="forgeTabContent">
+                <!-- Formulário 1: Adicionar Obra -->
+                <div
+                  aria-labelledby="obra-tab"
+                  class="tab-pane fade show active"
+                  id="tab-pane-obra"
+                  role="tabpanel"
+                  tabindex="0"
+                >
+                  <form
+                    id="formObra"
+                    onsubmit="handleFormSubmit(event, 'Obra')"
+                  >
+                    <!-- Título da Obra -->
+                    <div class="mb-3">
+                      <label
+                        class="form-label realm-label text-uppercase small d-block"
+                        for="obraTitulo"
+                        >TÍTULO DA OBRA</label
+                      >
+                      <div class="input-group">
+                        <span class="input-group-text realm-addon"
+                          ><i class="bi bi-film"></i
+                        ></span>
+                        <input
+                          class="form-control realm-control"
+                          id="obraTitulo"
+                          placeholder="Ex: Harry Potter"
+                          required=""
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <!-- Ano de Lançamento -->
+                    <div class="mb-3">
+                      <label
+                        class="form-label realm-label text-uppercase small d-block"
+                        for="obraAno"
+                        >ANO DE LANÇAMENTO</label
+                      >
+                      <div class="input-group">
+                        <span class="input-group-text realm-addon"
+                          ><i class="bi bi-hourglass-split"></i
+                        ></span>
+                        <input
+                          class="form-control realm-control"
+                          id="obraAno"
+                          placeholder="Ex: 13/13/2001"
+                          required=""
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <!-- Link da Imagem da Capa -->
+                    <div class="mb-3">
+                      <label
+                        class="form-label realm-label text-uppercase small d-block"
+                        for="obraCapa"
+                        >LINK DA IMAGEM DA CAPA</label
+                      >
+                      <div class="input-group">
+                        <span class="input-group-text realm-addon"
+                          ><i class="bi bi-link-45deg"></i
+                        ></span>
+                        <input
+                          class="form-control realm-control"
+                          id="obraCapa"
+                          placeholder="https://..."
+                          type="url"
+                        />
+                      </div>
+                    </div>
+                    <!-- Descrição e Lendas -->
+                    <div class="mb-4">
+                      <label
+                        class="form-label realm-label text-uppercase small d-block"
+                        for="obraDescricao"
+                        >DESCRIÇÃO E LENDAS</label
+                      >
+                      <div class="input-group">
+                        <span
+                          class="input-group-text realm-addon align-items-start pt-3"
+                          ><i class="bi bi-feather"></i
+                        ></span>
+                        <textarea
+                          class="form-control realm-control"
+                          id="obraDescricao"
+                          placeholder="Descreva os mistérios e a sinopse desta obra..."
+                          rows="4"
+                        ></textarea>
+                      </div>
+                    </div>
+                    <!-- Botão de Confirmação -->
+                    <div class="text-center pt-2">
+                      <button
+                        class="btn btn-realm px-5 py-3 fw-bold text-uppercase"
+                        type="submit"
+                      >
+                        CONFIRMAR REGISTRO
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <!-- Formulário 2: Adicionar Personagem -->
+                <div
+                  aria-labelledby="personagem-tab"
+                  class="tab-pane fade"
+                  id="tab-pane-personagem"
+                  role="tabpanel"
+                  tabindex="0"
+                >
+                  <form
+                    id="formPersonagem"
+                    onsubmit="handleFormSubmit(event, 'Personagem')"
+                  >
+                    <!-- Nome do Personagem -->
+                    <div class="mb-3">
+                      <label
+                        class="form-label realm-label text-uppercase small d-block"
+                        for="charNome"
+                        >NOME DO PERSONAGEM</label
+                      >
+                      <div class="input-group">
+                        <span class="input-group-text realm-addon"
+                          ><i class="bi bi-person-badge"></i
+                        ></span>
+                        <input
+                          class="form-control realm-control"
+                          id="charNome"
+                          placeholder="Ex: Vorgoth, o Devastador"
+                          required=""
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <!-- Linha Dupla: Obra e Classe/Nível -->
+                    <div class="row g-3 mb-3">
+                      <div class="col-md-6">
+                        <label
+                          class="form-label realm-label text-uppercase small d-block"
+                          for="charObra"
+                          >OBRA RELACIONADA</label
+                        >
+                        <div class="input-group">
+                          <span class="input-group-text realm-addon"
+                            ><i class="bi bi-bookmark-star"></i
+                          ></span>
+                          <input
+                            class="form-control realm-control"
+                            id="charObra"
+                            placeholder="Ex: Elden Ring"
+                            type="text"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label
+                          class="form-label realm-label text-uppercase small d-block"
+                          for="charClasse"
+                          >CLASSE / NÍVEL</label
+                        >
+                        <div class="input-group">
+                          <span class="input-group-text realm-addon"
+                            ><i class="bi bi-magic"></i
+                          ></span>
+                          <input
+                            class="form-control realm-control"
+                            id="charClasse"
+                            placeholder="Ex: Guerreiro Lv. 50"
+                            type="text"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Link do Retrato -->
+                    <div class="mb-3">
+                      <label
+                        class="form-label realm-label text-uppercase small d-block"
+                        for="charRetrato"
+                        >LINK DO RETRATO / AVATAR</label
+                      >
+                      <div class="input-group">
+                        <span class="input-group-text realm-addon"
+                          ><i class="bi bi-image"></i
+                        ></span>
+                        <input
+                          class="form-control realm-control"
+                          id="charRetrato"
+                          placeholder="https://..."
+                          type="url"
+                        />
+                      </div>
+                    </div>
+                    <!-- História -->
+                    <div class="mb-4">
+                      <label
+                        class="form-label realm-label text-uppercase small d-block"
+                        for="charHistoria"
+                        >HISTÓRIA &amp; TRAÇOS</label
+                      >
+                      <div class="input-group">
+                        <span
+                          class="input-group-text realm-addon align-items-start pt-3"
+                          ><i class="bi bi-journal-text"></i
+                        ></span>
+                        <textarea
+                          class="form-control realm-control"
+                          id="charHistoria"
+                          placeholder="Descreva as origens sombrias, juramentos e feitos do guerreiro..."
+                          rows="4"
+                        ></textarea>
+                      </div>
+                    </div>
+                    <!-- Botão de Confirmação -->
+                    <div class="text-center pt-2">
+                      <button
+                        class="btn btn-realm px-5 py-3 fw-bold text-uppercase"
+                        type="submit"
+                      >
+                        FORJAR PERSONAGEM
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- END: Central Card Container -->
+    <!-- BEGIN: Rodapé Centralizado -->
+    <footer class="py-4 text-center mt-auto">
+      <div class="container">
+        <p class="footer-quote mb-2">
+          The realms are deep and full of shadows.
+        </p>
+        <div
+          class="d-flex justify-content-center align-items-center gap-3 mb-2"
+        >
+          <i class="bi bi-crosshair2 footer-icon" title="Destino"></i>
+          <i class="bi bi-building footer-icon" title="Cidadelas"></i>
+          <i class="bi bi-eye footer-icon" title="Observadores"></i>
+        </div>
+        <p
+          class="font-cinzel text-uppercase small mb-0"
+          style="color: #635342; font-size: 0.65rem; letter-spacing: 0.25em"
+        >
+          © 2024 NPCREALM. FORGED IN DARKNESS.
+        </p>
+      </div>
+    </footer>
+    <!-- END: Rodapé Centralizado -->
+    <!-- Bootstrap 5.3.3 Bundle JS -->
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function handleFormSubmit(e, tipo) {
+        e.preventDefault();
+        alert(tipo + " registrado(a) com sucesso nos tomos da Forja!");
+        e.target.reset();
+      }
+    </script>
+  </body>
+</html>

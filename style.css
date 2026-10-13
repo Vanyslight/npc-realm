@@ -1,0 +1,705 @@
+/* ==========================================================================
+   NPCRealm — style.css
+   Design system: Grimdark Medieval
+   Páginas: Login, Forja, Obra, Index
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap");
+
+/* --------------------------------------------------------------------------
+   1. TOKENS
+   -------------------------------------------------------------------------- */
+:root {
+  /* Superfícies */
+  --surface: #1a1203;
+  --surface-lowest: #140d01;
+  --surface-low: #231a08;
+  --surface-container: #271e0c;
+  --surface-high: #322916;
+  --surface-highest: #3d341f;
+
+  /* Texto */
+  --on-surface: #f1e0c3;
+  --on-surface-variant: #dfbfbc;
+  --parchment: #d4c4a8;
+
+  /* Acentos */
+  --primary: #ffb3ac;
+  --on-primary: #680008;
+  --primary-container: #8a1c1c; /* Deep Blood Red */
+  --primary-container-hover: #a12323;
+  --primary-container-active: #6e1515;
+  --secondary: #e8c086;
+  --brass: #b08d57; /* Worn Brass */
+
+  /* Bordas */
+  --outline: #a78a87;
+  --outline-variant: #58413f;
+
+  /* Estados */
+  --error: #ffb4ab;
+
+  /* Tipografia */
+  --font-serif: "EB Garamond", Georgia, serif;
+  --font-sans: "Hanken Grotesk", system-ui, sans-serif;
+
+  /* Formas */
+  --radius-sm: 0.125rem;
+  --radius: 0.25rem;
+
+  /* Profundidade: sombras duras, estilo "entalhado" */
+  --shadow-carved: 4px 4px 0 rgba(0, 0, 0, 0.5);
+  --shadow-carved-sm: 2px 2px 0 rgba(0, 0, 0, 0.5);
+
+  /* Espaçamento (base de 8px) */
+  --space: 8px;
+  --gutter: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   2. BASE
+   -------------------------------------------------------------------------- */
+body {
+  background-color: var(--surface);
+  color: var(--on-surface);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-serif,
+.font-serif-realm,
+.font-cinzel,
+.font-cormorant {
+  font-family: var(--font-serif);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+/* Textura de ruído sobre toda a interface (3-5% de opacidade) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* Foco visível para teclado */
+:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   3. LAYOUT POR PÁGINA (sem precisar mexer no <body> do HTML)
+   -------------------------------------------------------------------------- */
+
+/* Login: card centralizado */
+body:has(.grimdark-card) {
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body:has(.grimdark-card)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(176, 141, 87, 0.04) 0%,
+    rgba(26, 18, 3, 0.95) 75%,
+    var(--surface-lowest) 100%
+  );
+  z-index: 0;
+}
+
+/* Obra: conteúdo no meio, rodapé embaixo */
+body:has(.card-forge) {
+  justify-content: space-between;
+}
+
+/* --------------------------------------------------------------------------
+   4. UTILITÁRIOS DE COR
+   -------------------------------------------------------------------------- */
+.bg-dark-realm {
+  background-color: var(--surface) !important;
+}
+
+.bg-card-realm {
+  background-color: var(--surface-low) !important;
+  border-color: var(--surface-highest) !important;
+}
+
+.border-realm {
+  border-color: var(--outline-variant) !important;
+}
+
+.text-gold {
+  color: var(--secondary) !important;
+}
+
+.text-muted-realm {
+  color: var(--on-surface-variant) !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. NAVBAR
+   -------------------------------------------------------------------------- */
+.realm-navbar,
+.navbar-np {
+  background-color: rgba(26, 18, 3, 0.95);
+  border-bottom: 1px solid var(--surface-highest);
+  backdrop-filter: blur(8px);
+}
+
+.nav-link-realm {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--on-surface-variant) !important;
+  transition: color 0.2s ease;
+}
+
+.nav-link-realm:hover,
+.nav-link-realm.active {
+  color: var(--primary) !important;
+}
+
+.brand-icon-box {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--surface-low);
+  border: 1px solid rgba(176, 141, 87, 0.4);
+  border-radius: var(--radius);
+  color: var(--brass);
+}
+
+.profile-pill,
+.avatar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--on-primary);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.profile-pill {
+  width: 32px;
+  height: 32px;
+}
+
+.avatar-btn {
+  width: 38px;
+  height: 38px;
+}
+
+.profile-pill:hover,
+.avatar-btn:hover {
+  background-color: #ffdad6;
+  color: #410003;
+}
+
+/* --------------------------------------------------------------------------
+   6. CARDS
+   -------------------------------------------------------------------------- */
+
+/* Base compartilhada: superfície + borda de latão + sombra dura */
+.grimdark-card,
+.card-forge,
+.realm-card {
+  background-color: var(--surface-container);
+  border: 1px solid var(--outline-variant);
+  border-top: 1px solid var(--brass); /* borda superior "gravada" */
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-carved);
+}
+
+.grimdark-card {
+  position: relative;
+  z-index: 1;
+  border-color: var(--brass);
+}
+
+.card-forge {
+  border-radius: var(--radius);
+}
+
+/* Cards do Index */
+.realm-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.realm-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--secondary);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.6);
+}
+
+.card-img-wrapper {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.88;
+  transition: transform 0.5s ease;
+}
+
+.realm-card:hover .card-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.card-img-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    var(--surface-container) 0%,
+    transparent 60%
+  );
+}
+
+/* Cards de personagem da Forja */
+.char-card {
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.char-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-container) !important;
+  box-shadow: 6px 6px 0 rgba(138, 28, 28, 0.35);
+}
+
+.char-card img {
+  height: 230px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.char-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Brasão do Login */
+.heraldic-logo-container {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto;
+  padding: 4px;
+  overflow: hidden;
+  background-color: var(--surface-lowest);
+  border: 1.5px solid var(--brass);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 16px rgba(0, 0, 0, 0.8),
+    0 0 15px rgba(176, 141, 87, 0.15);
+}
+
+.heraldic-logo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Brasão da Obra */
+.forge-crest {
+  width: 64px;
+  height: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--surface-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius);
+  color: var(--primary);
+  font-size: 1.5rem;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+/* --------------------------------------------------------------------------
+   7. TÍTULOS E DIVISORES
+   -------------------------------------------------------------------------- */
+.title-parchment,
+.forge-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #e6d8be;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.6);
+}
+
+.title-parchment {
+  letter-spacing: 0.12em;
+}
+
+.forge-title {
+  letter-spacing: 0.28em;
+  color: #f7eedf;
+}
+
+.divider-runic,
+.forge-divider,
+.divider-line,
+.footer-divider {
+  height: 1px;
+  margin: 0 auto;
+  background: linear-gradient(90deg, transparent, var(--brass), transparent);
+}
+
+.divider-runic {
+  width: 80px;
+}
+
+.forge-divider {
+  width: 64px;
+  height: 2px;
+  margin: 0.5rem auto;
+}
+
+.divider-line {
+  width: 180px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--outline-variant),
+    transparent
+  );
+}
+
+.footer-divider {
+  width: auto;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--surface-highest),
+    transparent
+  );
+}
+
+/* --------------------------------------------------------------------------
+   8. FORMULÁRIOS
+   -------------------------------------------------------------------------- */
+.form-label-custom,
+.realm-label {
+  margin-bottom: 0.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.input-group-medieval .input-group-text,
+.input-group-text.realm-addon {
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+  background-color: var(--surface-lowest);
+  border: 1px solid var(--outline-variant);
+  border-right: none;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+  color: var(--brass);
+}
+
+.input-group-medieval .form-control,
+.form-control.realm-control,
+.form-select.realm-control {
+  padding: 0.7rem 0.9rem;
+  background-color: var(--surface-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: 0;
+  color: var(--on-surface);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.input-group-medieval .form-control::placeholder,
+.form-control.realm-control::placeholder {
+  color: rgba(212, 196, 168, 0.35);
+  font-style: italic;
+}
+
+/* Foco: borda vermelho-sangue */
+.input-group-medieval .form-control:focus,
+.form-control.realm-control:focus,
+.form-select.realm-control:focus {
+  background-color: var(--surface-lowest);
+  border-color: var(--primary-container);
+  color: #fff2db;
+  box-shadow:
+    inset 2px 2px 4px rgba(0, 0, 0, 0.6),
+    0 0 0 1px var(--primary-container);
+}
+
+.input-group:focus-within .input-group-text {
+  border-color: var(--primary-container);
+  color: var(--primary);
+}
+
+.input-group-medieval .btn-addon {
+  background-color: var(--surface-lowest);
+  border: 1px solid var(--outline-variant);
+  border-left: none;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--brass);
+}
+
+.input-group-medieval .btn-addon:hover {
+  background-color: var(--surface-low);
+  color: #fff2db;
+}
+
+/* Validação */
+.was-validated .form-control:invalid {
+  border-color: #c93b3b;
+}
+
+.invalid-feedback {
+  font-size: 0.78rem;
+  text-align: left;
+  color: var(--error);
+}
+
+/* --------------------------------------------------------------------------
+   9. BOTÕES (canto superior esquerdo reto = silhueta "forjada")
+   -------------------------------------------------------------------------- */
+
+/* Primário: vermelho-sangue com borda inferior de latão */
+.btn-blood-realm {
+  padding: 0.8rem 1.25rem;
+  background-color: var(--primary-container);
+  border: 1px solid rgba(176, 141, 87, 0.6);
+  border-bottom: 2px solid var(--brass);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) var(--radius-sm);
+  color: #ffdfdb;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-carved-sm);
+  transition: all 0.2s ease;
+}
+
+.btn-blood-realm:hover {
+  background-color: var(--primary-container-hover);
+  border-color: #dfbf88;
+  color: #fff;
+  box-shadow:
+    inset 0 0 12px rgba(0, 0, 0, 0.35),
+    0 0 16px rgba(161, 35, 35, 0.5);
+}
+
+.btn-blood-realm:active {
+  background-color: var(--primary-container-active);
+  transform: translateY(1px);
+}
+
+/* Secundário/CTA: salmão com sombra dura */
+.btn-realm {
+  background-color: var(--primary);
+  border: 1px solid var(--outline-variant);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) var(--radius-sm);
+  color: var(--on-primary);
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  box-shadow: 0 4px 0 var(--outline-variant);
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-realm:hover,
+.btn-realm:focus,
+.btn-realm:active {
+  background-color: #ffdad6;
+  color: #410003;
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--outline-variant);
+}
+
+/* --------------------------------------------------------------------------
+   10. LINKS
+   -------------------------------------------------------------------------- */
+.link-ancient {
+  font-size: 0.85rem;
+  color: rgba(212, 196, 168, 0.65);
+  text-decoration: underline;
+  text-decoration-color: rgba(176, 141, 87, 0.4);
+  text-underline-offset: 4px;
+  transition: color 0.2s;
+}
+
+.link-ancient:hover {
+  color: var(--brass);
+}
+
+.link-alliance {
+  color: var(--brass);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.link-alliance:hover {
+  color: #ecd5a8;
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   11. ABAS (Bootstrap nav-tabs)
+   -------------------------------------------------------------------------- */
+.nav-tabs.realm-tabs {
+  border-bottom: 1px solid var(--surface-highest);
+}
+
+.nav-tabs.realm-tabs .nav-link {
+  padding: 0.65rem 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  color: var(--outline);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.nav-tabs.realm-tabs .nav-link:hover {
+  color: var(--primary);
+  border-color: transparent;
+}
+
+.nav-tabs.realm-tabs .nav-link.active {
+  background: transparent;
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+/* --------------------------------------------------------------------------
+   12. BADGES / TAGS
+   -------------------------------------------------------------------------- */
+.level-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.tag-badge {
+  padding: 0.35rem 0.65rem;
+  background-color: var(--surface-lowest);
+  border: 1px solid var(--surface-highest);
+  border-radius: 0;
+  color: var(--on-surface-variant);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+/* --------------------------------------------------------------------------
+   13. BANNERS (Forja)
+   -------------------------------------------------------------------------- */
+.banner-hero {
+  position: relative;
+  background:
+    linear-gradient(rgba(20, 13, 1, 0.78), rgba(20, 13, 1, 0.95)),
+    url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSv8O5vN6-uZGrTvOmmhzf3ssZzcj5lEprlGtS1OMkACgj7xoZw1KRrDN16agHkKNcdaw1nf3VYza_Fal2BRwMoP1ZHWDZaT_a4Y5I6fYteIasTqXujcV3X6UbBo9GEAMK8dgj9p3nPGmggjxuuF6DxBqUidtNJiZ7-iaSoxOLIWWstDEN7avA5qsWCsP348PvqoYrBZugeA5LrVSuhvykfTkDwKqmaqdDmgUM4pmV-S9kmccjv1GzRw");
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--outline-variant) !important;
+}
+
+.banner-divider {
+  background:
+    linear-gradient(rgba(18, 12, 1, 0.8), rgba(18, 12, 1, 0.85)),
+    url("https://lh3.googleusercontent.com/aida-public/AB6AXuDduz5Xf2dhAnVUQeiFhJf8cYrSFQ6ssXO7w3wcbzU4bbOg8pZ_T4H7BCrim82aZCa7wOmCrsB--xdZsQOWglw57HqLpRO0DjfqNpciy4KE5H0Uu0bWNS6s3Em6jSTQVIvqvcM9hPQnk5qKJaxP7ghMgudJKZZDjjSWtZGhNEesc5Zu1rUy2SnMtDFcCA-om2MJD8Q-vxtl9k5GlcA4KewtzgtUj81Ta636Ljz5K5m9vb0DUMm5XsAe4A");
+  background-size: cover;
+  background-position: center;
+  border-top: 1px solid var(--surface-highest);
+  border-bottom: 1px solid var(--surface-highest);
+}
+
+/* --------------------------------------------------------------------------
+   14. RODAPÉ
+   -------------------------------------------------------------------------- */
+.footer-quote {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--parchment);
+}
+
+.footer-icon {
+  font-size: 1.4rem;
+  color: var(--outline-variant);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.footer-icon:hover {
+  color: var(--primary);
+}
+
+/* --------------------------------------------------------------------------
+   15. MOVIMENTO REDUZIDO
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
+  .realm-card:hover,
+  .char-card:hover {
+    transform: none;
+  }
+}

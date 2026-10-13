@@ -1,0 +1,197 @@
+<!doctype html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NPCRealm - Acesso ao Reino</title>
+    <link
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,700;1,400&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4">
+          <!-- Grimdark Card -->
+          <div class="card grimdark-card shadow-lg">
+            <div class="card-body p-4 p-md-5">
+              <!-- Heraldic Logo -->
+              <div class="text-center mb-4">
+                <div class="heraldic-logo-container mb-3">
+                  <img
+                    alt="NPCRealm Logo"
+                    class="img-fluid"
+                    src="https://lh3.googleusercontent.com/aida/AEtjO1Vt777YNGzNz-QoJX_xO_3E4IUFj7yNdcbuDiY8h-bWsHVeD_EEDiqf8J8TP5IGSQNCq4F1ZCgdMJrtvlXBi8G9EtRaIylL5bM5NygPI3VHjNWTeyU4dWuSQr0ipwEre8dxLqKYuhUBBWUegcc2lg-Aej3GvREjMmSCf97xzGgDY1djuDdW51x2B9vvYx5zTz1vRvlqTt-2DvuYsnPZ1CWWG4tFLNk-tCMWq7CviDAGoLYRzbZwgXQ85Znf"
+                  />
+                </div>
+                <h1 class="h3 title-parchment mb-2">Acesso ao Reino</h1>
+                <div class="divider-runic mb-2"></div>
+                <p
+                  class="fst-italic small mb-0"
+                  style="color: rgba(212, 196, 168, 0.7)"
+                >
+                  Identifique-se, Guardião.
+                </p>
+              </div>
+              <!-- Login Form with Bootstrap 5 Validation -->
+              <form class="needs-validation" id="realmLoginForm" novalidate="">
+                <!-- Nome de Guardião -->
+                <div class="mb-3 text-start">
+                  <label class="form-label form-label-custom" for="guardianName"
+                    >Nome de Guardião</label
+                  >
+                  <div class="input-group input-group-medieval has-validation">
+                    <span class="input-group-text" id="addon-user">
+                      <i class="bi bi-shield-shaded"></i>
+                    </span>
+                    <input
+                      aria-describedby="addon-user"
+                      class="form-control"
+                      id="guardianName"
+                      placeholder="Ex: Aldous, o Quebrado"
+                      required=""
+                      type="text"
+                    />
+                    <div class="invalid-feedback">
+                      Declare vosso nome para avançar.
+                    </div>
+                  </div>
+                </div>
+                <!-- Senha do Códice -->
+                <div class="mb-4 text-start">
+                  <label
+                    class="form-label form-label-custom"
+                    for="codexPassword"
+                    >Senha do Códice</label
+                  >
+                  <div class="input-group input-group-medieval has-validation">
+                    <span class="input-group-text" id="addon-lock">
+                      <i class="bi bi-key-fill"></i>
+                    </span>
+                    <input
+                      aria-describedby="addon-lock btnTogglePassword"
+                      class="form-control"
+                      id="codexPassword"
+                      minlength="6"
+                      placeholder="••••••••••••"
+                      required=""
+                      type="password"
+                    />
+                    <button
+                      aria-label="Revelar senha"
+                      class="btn btn-addon"
+                      id="btnTogglePassword"
+                      type="button"
+                    >
+                      <i class="bi bi-eye-slash" id="toggleIcon"></i>
+                    </button>
+                    <div class="invalid-feedback">
+                      A senha rúnica deve ter no mínimo 6 caracteres.
+                    </div>
+                  </div>
+                </div>
+                <!-- Botão de Submissão -->
+                <div class="d-grid mb-4">
+                  <button
+                    class="btn btn-blood-realm d-flex justify-content-center align-items-center gap-2"
+                    id="submitBtn"
+                    type="submit"
+                  >
+                    <i class="bi bi-shield-fill-check"></i>
+                    <span>Entrar no Reino</span>
+                    <i class="bi bi-chevron-right small"></i>
+                  </button>
+                </div>
+                <!-- Links de Rodapé -->
+                <div
+                  class="text-center pt-3 border-top border-secondary-subtle"
+                  style="border-color: rgba(176, 141, 87, 0.25) !important"
+                >
+                  <div class="mb-2">
+                    <a class="link-ancient" href="#"
+                      >Esqueceu as palavras antigas?</a
+                    >
+                  </div>
+                  <p class="small mb-0" style="color: rgba(212, 196, 168, 0.6)">
+                    Um recém-chegado?
+                    <a class="link-alliance" href="#">Forjar Aliança</a>
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap 5.3.3 Bundle JS -->
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("realmLoginForm");
+        const passwordInput = document.getElementById("codexPassword");
+        const toggleBtn = document.getElementById("btnTogglePassword");
+        const toggleIcon = document.getElementById("toggleIcon");
+        const submitBtn = document.getElementById("submitBtn");
+
+        // Alternar visibilidade da senha
+        toggleBtn.addEventListener("click", function () {
+          const isPassword = passwordInput.getAttribute("type") === "password";
+          passwordInput.setAttribute("type", isPassword ? "text" : "password");
+          toggleIcon.className = isPassword ? "bi bi-eye" : "bi bi-eye-slash";
+        });
+
+        // Validação com classes nativas do Bootstrap 5
+        form.addEventListener(
+          "submit",
+          function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            } else {
+              event.preventDefault();
+
+              // Simulação de entrada no Reino
+              submitBtn.disabled = true;
+              submitBtn.innerHTML =
+                '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Abertura dos Portões...';
+
+              const username = document
+                .getElementById("guardianName")
+                .value.trim();
+              localStorage.setItem(
+                "npcRealm_user",
+                JSON.stringify({
+                  name: username,
+                  enteredAt: new Date().toISOString(),
+                }),
+              );
+
+              setTimeout(() => {
+                submitBtn.classList.remove("btn-blood-realm");
+                submitBtn.classList.add("btn-success");
+                submitBtn.innerHTML =
+                  '<i class="bi bi-check-circle-fill"></i> Portões Abertos';
+              }, 1200);
+            }
+
+            form.classList.add("was-validated");
+          },
+          false,
+        );
+      });
+    </script>
+  </body>
+</html>

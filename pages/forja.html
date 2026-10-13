@@ -1,9 +1,585 @@
 <!doctype html>
-<html lang="en">
+
+<html data-bs-theme="dark" lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>As Crônicas de Eldoria - NPCRealm</title>
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="/node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:wght@300;400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body class="d-flex flex-column min-vh-100">
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark-realm border-bottom border-realm sticky-top py-3"
+    >
+      <div class="container">
+        <a
+          class="navbar-brand d-flex items-center gap-3 font-serif fw-bold fs-3 text-uppercase tracking-wider text-light"
+          href="#"
+        >
+          <img
+            alt="NPCRealm"
+            class="d-inline-block align-text-top rounded-1"
+            height="42"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1WBRswJXvoVedMejPbOkl558K0MSQpqyiXqOJLQsWRmcFlfkFyoRsVilwkDe0M6bRRG_4gE2CTkEU4wf_UpvWAlh6Ur2FKshS4eVIdkp2Y5Y_GDT1CsL2sb8x7rNfo0rBjF7aq5cqjQ8Ir96bAtxwQVt77d0OtA_NQnIXhfimf4IQcsDY_P71qedzyhZUXsnzXEPsW3n8Ho5M5HKfg9wHv5qWGI80v10P-Fezdw4j69pyXD3QN-FL4so3j3"
+            width="42"
+          />
+          NPCRealm
+        </a>
+        <button
+          aria-controls="realmNavbar"
+          aria-expanded="false"
+          aria-label="Navegação"
+          class="navbar-toggler"
+          data-bs-target="#realmNavbar"
+          data-bs-toggle="collapse"
+          type="button"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="realmNavbar">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-2">
+            <li class="nav-item">
+              <a
+                class="nav-link text-uppercase fw-semibold px-3 text-gold"
+                href="#"
+                ><i class="bi bi-collection me-1"></i> Acervo</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-uppercase fw-semibold px-3" href="#"
+                ><i class="bi bi-box-arrow-in-right me-1"></i> Login</a
+              >
+            </li>
+            <li class="nav-item ms-lg-2">
+              <a
+                class="btn btn-outline-danger btn-sm rounded-circle d-flex align-items-center justify-center p-2"
+                href="#"
+                title="Perfil"
+              >
+                <i class="bi bi-person-fill"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="flex-grow-1">
+      <!-- 2. Banner de Cabeçalho da Obra -->
+      <div class="container my-4">
+        <div class="p-5 rounded banner-hero border shadow-lg">
+          <div class="row align-items-end g-4">
+            <div class="col-lg-8">
+              <div class="d-flex align-items-center gap-2 mb-3">
+                <span class="badge bg-danger text-uppercase px-2 py-1"
+                  ><i class="bi bi-shield-shaded me-1"></i> Campanha Ativa</span
+                >
+                <span
+                  class="badge bg-dark border border-secondary text-gold px-2 py-1"
+                  ><i class="bi bi-record-circle-fill text-danger me-1"></i>
+                  Sessão 42</span
+                >
+              </div>
+              <h1 class="display-4 fw-bold text-light mb-3">
+                As Crônicas de Eldoria
+              </h1>
+              <p class="lead text-muted-realm mb-0">
+                Nas sombras de um império desmoronado, velhos pactos são
+                cobrados com sangue. O mundo está morrendo, mas alguns se
+                recusam a cair sem lutar, agarrando-se a magias proibidas e
+                glórias esquecidas nas ruínas do passado.
+              </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <button
+                class="btn btn-danger btn-lg px-4 py-3 fw-bold text-uppercase shadow-sm"
+                type="button"
+              >
+                <i class="bi bi-book-half me-2"></i> Continuar Leitura
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container my-4">
+        <div class="row g-4">
+          <aside class="col-lg-3">
+            <div class="card bg-card-realm border mb-4 shadow">
+              <div
+                class="card-header bg-dark-realm border-bottom border-realm py-3"
+              >
+                <h5 class="card-title font-serif m-0 text-light fw-bold">
+                  <i class="bi bi-journal-bookmark text-danger me-2"></i
+                  >Registros
+                </h5>
+              </div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <small
+                    class="text-uppercase text-muted-realm fw-semibold d-block"
+                    >Mestre</small
+                  >
+                  <span class="fs-6 fw-bold text-gold">Azaroth_DM</span>
+                </div>
+                <div class="mb-3">
+                  <small
+                    class="text-uppercase text-muted-realm fw-semibold d-block"
+                    >Sistema</small
+                  >
+                  <span class="fs-6 text-light">Grim Hollow 5e</span>
+                </div>
+                <div class="mb-3">
+                  <small
+                    class="text-uppercase text-muted-realm fw-semibold d-block"
+                    >Localização Atual</small
+                  >
+                  <span class="fs-6 text-light d-flex align-items-center gap-1">
+                    <i class="bi bi-geo-alt-fill text-danger"></i> Fosso de
+                    Mármore
+                  </span>
+                </div>
+                <div>
+                  <small
+                    class="text-uppercase text-muted-realm fw-semibold d-block"
+                    >Mortes de Personagem</small
+                  >
+                  <span class="display-6 font-serif fw-bold text-danger"
+                    >3</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Card com List-Group de Eventos -->
+            <div class="card bg-card-realm border shadow">
+              <div
+                class="card-header bg-dark-realm border-bottom border-realm py-3"
+              >
+                <h6
+                  class="card-title font-serif m-0 text-uppercase text-gold fw-bold"
+                >
+                  <i class="bi bi-clock-history me-1"></i> Últimos Eventos
+                </h6>
+              </div>
+              <ul class="list-group list-group-flush bg-transparent">
+                <li
+                  class="list-group-item bg-transparent text-light border-realm px-3 py-3"
+                >
+                  <div class="d-flex w-100 justify-content-between mb-1">
+                    <strong class="text-gold small">Sessão 41</strong>
+                    <span
+                      class="badge bg-danger-subtle text-danger border border-danger-subtle"
+                      >Recente</span
+                    >
+                  </div>
+                  <p class="mb-1 small text-muted-realm">
+                    A quebra do selo de sangue no Templo Norte.
+                  </p>
+                </li>
+                <li
+                  class="list-group-item bg-transparent text-light border-realm px-3 py-3"
+                >
+                  <div class="d-flex w-100 justify-content-between mb-1">
+                    <strong class="text-gold small">Sessão 40</strong>
+                  </div>
+                  <p class="mb-1 small text-muted-realm">
+                    Fuga das catacumbas secretas do Lich Lord.
+                  </p>
+                </li>
+                <li
+                  class="list-group-item bg-transparent text-light border-realm px-3 py-3"
+                >
+                  <div class="d-flex w-100 justify-content-between mb-1">
+                    <strong class="text-gold small">Sessão 39</strong>
+                  </div>
+                  <p class="mb-1 small text-muted-realm">
+                    Queda do Forte de Ferro e traição dos mercenários.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          <!-- Coluna Principal (col-lg-9): Dramatis Personae -->
+          <section class="col-lg-9">
+            <div
+              class="d-flex align-items-center justify-content-between border-bottom border-realm pb-3 mb-4"
+            >
+              <div>
+                <h2
+                  class="font-serif fw-bold m-0 text-light d-flex align-items-center gap-2"
+                >
+                  <i class="bi bi-people-fill text-danger"></i> Dramatis
+                  Personae
+                </h2>
+                <p class="text-muted-realm small mb-0 mt-1">
+                  Os sobreviventes que caminham nas sombras de Eldoria. Clique
+                  em um retrato para examinar a ficha detalhada.
+                </p>
+              </div>
+              <span class="badge bg-dark border border-secondary text-gold"
+                >4 Heróis</span
+              >
+            </div>
+            <!-- Grid de Personagens -->
+            <div class="row row-cols-1 row-cols-md-2 g-3">
+              <!-- Personagem 1: Vorgoth -->
+              <div class="col">
+                <div
+                  class="card bg-card-realm border text-light h-100 char-card"
+                  data-bs-target="#characterModal"
+                  data-bs-toggle="modal"
+                  onclick="
+                    setModalData(
+                      'Vorgoth',
+                      'O Quebrador de Crânios',
+                      'Orc / Bárbaro • Nv. 8',
+                      '85 / 92',
+                      'Machado do Carrasco (+2, 1d12+7 Cortante)',
+                      'Força: 20 | Const: 18 | Des: 14',
+                      'Vorgoth carrega no peito as cicatrizes de dezenas de clãs massacrados. Ele jurou vingança contra os generais do Império Carmesim e não aceita rendição.',
+                      'https://lh3.googleusercontent.com/aida-public/AB6AXuC-MFRF8Ffn5HgCzTrtX8w8CAi9Z5s5dpf9ggrN0F6I5oO_cC_J7FGXMxMnxOTXKSd492x9gPUe4atAraZBWWWhA37eqHOXa_AHmeta05Eo0fYOcJN6AWge-bB2WpQK5Ci9ggf3ZGzm4Pfs69kUYYDCIrbd6nbj-gGdI7yd4ufU0w9OiA622BEqUWr1qXOhJUcAJnlauP7QOiAJPFKciT44YLxsds4bkwZGUmN85T8cqtf107s8Eec-EA',
+                    )
+                  "
+                >
+                  <img
+                    alt="Vorgoth"
+                    class="card-img-top"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-MFRF8Ffn5HgCzTrtX8w8CAi9Z5s5dpf9ggrN0F6I5oO_cC_J7FGXMxMnxOTXKSd492x9gPUe4atAraZBWWWhA37eqHOXa_AHmeta05Eo0fYOcJN6AWge-bB2WpQK5Ci9ggf3ZGzm4Pfs69kUYYDCIrbd6nbj-gGdI7yd4ufU0w9OiA622BEqUWr1qXOhJUcAJnlauP7QOiAJPFKciT44YLxsds4bkwZGUmN85T8cqtf107s8Eec-EA"
+                  />
+                  <div
+                    class="card-body d-flex justify-content-between align-items-end"
+                  >
+                    <div>
+                      <span
+                        class="badge bg-dark border border-secondary text-gold mb-1"
+                        >Bárbaro / Nv. 8</span
+                      >
+                      <h4 class="card-title font-serif fw-bold m-0 text-light">
+                        Vorgoth
+                      </h4>
+                    </div>
+                    <div class="text-end">
+                      <small class="text-uppercase text-muted-realm d-block"
+                        >HP</small
+                      >
+                      <span class="badge bg-danger fs-6">85/92</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Personagem 2: Elara -->
+              <div class="col">
+                <div
+                  class="card bg-card-realm border text-light h-100 char-card"
+                  data-bs-target="#characterModal"
+                  data-bs-toggle="modal"
+                  onclick="
+                    setModalData(
+                      'Elara',
+                      'Sombra Sussurrante',
+                      'Elfa / Ladino • Nv. 8',
+                      '54 / 54',
+                      'Adagas Gêmeas da Voragem Sombria (1d4+5 Perfurante)',
+                      'Força: 10 | Const: 14 | Des: 20',
+                      'Mestre das esquinas e catacumbas de Eldoria. Perdeu sua linhagem no incêndio do Grande Arquivo e agora vende suas lâminas pelo preço de segredos.',
+                      'https://lh3.googleusercontent.com/aida-public/AB6AXuDR97owwBlXYu-avt7EIShUK-sNW8P4dpmjLgLiKTB67yuL-H4cv5tb9QpN4GrwmxB6ka-Ow5mRvMngkMANL6Ozk8h9fIfLhMnmkjTnPrioRZbN9LJ6IWi6yOEMVc6q4iwc908U1qEJygl5wYkhYOReTnVGdaQrIOnPcwJ-zokMxCz3WLoAEV0IEDJ3Xag-vgxIUoheSUoVSqCDy8lt5MfHy9oBFYNL54C0oFHMLLES1JKqB_IrG43E4g',
+                    )
+                  "
+                >
+                  <img
+                    alt="Elara"
+                    class="card-img-top"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR97owwBlXYu-avt7EIShUK-sNW8P4dpmjLgLiKTB67yuL-H4cv5tb9QpN4GrwmxB6ka-Ow5mRvMngkMANL6Ozk8h9fIfLhMnmkjTnPrioRZbN9LJ6IWi6yOEMVc6q4iwc908U1qEJygl5wYkhYOReTnVGdaQrIOnPcwJ-zokMxCz3WLoAEV0IEDJ3Xag-vgxIUoheSUoVSqCDy8lt5MfHy9oBFYNL54C0oFHMLLES1JKqB_IrG43E4g"
+                  />
+                  <div
+                    class="card-body d-flex justify-content-between align-items-end"
+                  >
+                    <div>
+                      <span
+                        class="badge bg-dark border border-secondary text-gold mb-1"
+                        >Ladino / Nv. 8</span
+                      >
+                      <h4 class="card-title font-serif fw-bold m-0 text-light">
+                        Elara
+                      </h4>
+                    </div>
+                    <div class="text-end">
+                      <small class="text-uppercase text-muted-realm d-block"
+                        >HP</small
+                      >
+                      <span class="badge bg-danger fs-6">54/54</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Personagem 3: Kaelen -->
+              <div class="col">
+                <div
+                  class="card bg-card-realm border text-light h-100 char-card"
+                  data-bs-target="#characterModal"
+                  data-bs-toggle="modal"
+                  onclick="
+                    setModalData(
+                      'Kaelen',
+                      'O Arauto Quebrado',
+                      'Humano / Paladino • Nv. 8',
+                      '12 / 76',
+                      'Lâmina do Sol Poente e Escudo Rachado',
+                      'Força: 18 | Const: 16 | Car: 16',
+                      'Kaelen mantém a fé em divindades que há muito silenciaram seus altares. Gravemente ferido na Batalha das Cinzas, ele empunha sua espada em agonia.',
+                      'https://lh3.googleusercontent.com/aida-public/AB6AXuDzDGSBWfTdGvpita7ugYK8lCf6n0_WIbZ35V3DTPADjwDVTWi73nKHsWF5uSf_HCsKN0pIYkPbuwwPe8zrRkbAzZ9J469uvGsUUeDigrdLfkkg2WA1rhWalXlBaVzjWyUL_dRI1SpU2r6nU_zf20jnsOkoulsXhQ90JTvuqnkbjA5xMo2g5lPOjqTKqoK6MPKGgTtqO4KrcIiPKk-uBuUgzzg_dUX59co5FQQIBUM2cROKmyKJQYIZvg',
+                    )
+                  "
+                >
+                  <img
+                    alt="Kaelen"
+                    class="card-img-top"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzDGSBWfTdGvpita7ugYK8lCf6n0_WIbZ35V3DTPADjwDVTWi73nKHsWF5uSf_HCsKN0pIYkPbuwwPe8zrRkbAzZ9J469uvGsUUeDigrdLfkkg2WA1rhWalXlBaVzjWyUL_dRI1SpU2r6nU_zf20jnsOkoulsXhQ90JTvuqnkbjA5xMo2g5lPOjqTKqoK6MPKGgTtqO4KrcIiPKk-uBuUgzzg_dUX59co5FQQIBUM2cROKmyKJQYIZvg"
+                  />
+                  <div
+                    class="card-body d-flex justify-content-between align-items-end"
+                  >
+                    <div>
+                      <span
+                        class="badge bg-dark border border-secondary text-gold mb-1"
+                        >Paladino / Nv. 8</span
+                      >
+                      <h4 class="card-title font-serif fw-bold m-0 text-light">
+                        Kaelen
+                      </h4>
+                    </div>
+                    <div class="text-end">
+                      <small class="text-uppercase text-muted-realm d-block"
+                        >HP</small
+                      >
+                      <span class="badge bg-danger fs-6">12/76</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Personagem 4: Ilyana -->
+              <div class="col">
+                <div
+                  class="card bg-card-realm border text-light h-100 char-card"
+                  data-bs-target="#characterModal"
+                  data-bs-toggle="modal"
+                  onclick="
+                    setModalData(
+                      'Ilyana',
+                      'Arauta das Chamas Abissais',
+                      'Tiefling / Bruxo • Nv. 8',
+                      '45 / 60',
+                      'Grimório das Brasas Esquecidas &amp; Foco Arcano',
+                      'Int: 14 | Sab: 12 | Car: 20',
+                      'Firmou um pacto voraz com uma entidade das profundezas sob as cinzas da cidadela. Seus olhos queimam como forjas e sua magia consome amigos e inimigos.',
+                      'https://lh3.googleusercontent.com/aida-public/AB6AXuCEuCiO3RMmmp0LVoqJUPvQI8N7FmKz7FzhMIJ1iU_lyQmq6WfgQ0RN86q-lt7j0CZhd4ZObgpf26Av4pYly-OG4UEzbvsmm9CWbtiVHcgcu0e-gmk5Slsan5Ig0GAH7D3sIMrSZ5x14K0kIIvQa6Roeo6nPCBSDdyGvz6sPRt6JdcheWFT-BlZTzYXYDmxDNH2Y2-uFSLYhXO47OL8FcTI9EaH8wqh0EtXLyeh-e6I-Tu45HxXW9i7dg',
+                    )
+                  "
+                >
+                  <img
+                    alt="Ilyana"
+                    class="card-img-top"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEuCiO3RMmmp0LVoqJUPvQI8N7FmKz7FzhMIJ1iU_lyQmq6WfgQ0RN86q-lt7j0CZhd4ZObgpf26Av4pYly-OG4UEzbvsmm9CWbtiVHcgcu0e-gmk5Slsan5Ig0GAH7D3sIMrSZ5x14K0kIIvQa6Roeo6nPCBSDdyGvz6sPRt6JdcheWFT-BlZTzYXYDmxDNH2Y2-uFSLYhXO47OL8FcTI9EaH8wqh0EtXLyeh-e6I-Tu45HxXW9i7dg"
+                  />
+                  <div
+                    class="card-body d-flex justify-content-between align-items-end"
+                  >
+                    <div>
+                      <span
+                        class="badge bg-dark border border-secondary text-gold mb-1"
+                        >Bruxo / Nv. 8</span
+                      >
+                      <h4 class="card-title font-serif fw-bold m-0 text-light">
+                        Ilyana
+                      </h4>
+                    </div>
+                    <div class="text-end">
+                      <small class="text-uppercase text-muted-realm d-block"
+                        >HP</small
+                      >
+                      <span class="badge bg-danger fs-6">45/60</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Faixa de Ambiente -->
+            <div class="rounded banner-divider p-4 my-4 text-center">
+              <span
+                class="font-serif fs-4 text-uppercase tracking-widest text-gold opacity-75"
+              >
+                <i class="bi bi-moon-stars me-2"></i> A Morte Espreita Sob a Lua
+                Partida
+              </span>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <!-- 5. Modal Bootstrap 5 para Ficha Detalhada -->
+    <div
+      aria-hidden="true"
+      aria-labelledby="modalCharacterName"
+      class="modal fade"
+      id="characterModal"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div
+          class="modal-content bg-card-realm border border-realm text-light shadow-lg"
+        >
+          <div class="modal-header bg-dark-realm border-bottom border-realm">
+            <div>
+              <span
+                class="badge bg-dark border border-secondary text-gold mb-1"
+                id="modalCharacterClass"
+                >Classe &amp; Nível</span
+              >
+              <h3
+                class="modal-title font-serif fw-bold"
+                id="modalCharacterName"
+              >
+                Nome do Personagem
+              </h3>
+              <small
+                class="text-muted-realm fst-italic"
+                id="modalCharacterTitle"
+                >Título do Personagem</small
+              >
+            </div>
+            <button
+              aria-label="Fechar"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              type="button"
+            ></button>
+          </div>
+          <div class="modal-body p-4">
+            <div class="row g-4 align-items-center">
+              <div class="col-md-5 text-center">
+                <img
+                  alt="Retrato do Personagem"
+                  class="img-fluid rounded border border-realm shadow object-fit-cover w-100"
+                  id="modalCharacterImg"
+                  src=""
+                  style="max-height: 290px"
+                />
+                <div class="mt-3 p-2 bg-dark-realm rounded border border-realm">
+                  <span
+                    class="text-muted-realm small text-uppercase d-block fw-semibold"
+                    >Pontos de Vida</span
+                  >
+                  <span class="fs-4 fw-bold text-danger" id="modalCharacterHp"
+                    >HP</span
+                  >
+                </div>
+              </div>
+              <div class="col-md-7">
+                <h5
+                  class="font-serif text-gold border-bottom border-realm pb-2 mb-3"
+                >
+                  <i class="bi bi-card-text me-2"></i>Biografia &amp; Registro
+                </h5>
+                <p class="small text-muted-realm mb-4" id="modalCharacterBio">
+                  Descrição do personagem.
+                </p>
+                <h5
+                  class="font-serif text-gold border-bottom border-realm pb-2 mb-2"
+                >
+                  <i class="bi bi-shield-shaded me-2"></i>Atributos Notáveis
+                </h5>
+                <p
+                  class="small text-light bg-dark-realm p-2 rounded border border-realm mb-4 font-monospace"
+                  id="modalCharacterStats"
+                >
+                  Atributos
+                </p>
+                <h5
+                  class="font-serif text-gold border-bottom border-realm pb-2 mb-2"
+                >
+                  <i class="bi bi-backpack me-2"></i>Equipamento Primário
+                </h5>
+                <div
+                  class="p-2 bg-dark-realm rounded border border-realm small text-light"
+                  id="modalCharacterGear"
+                >
+                  Equipamentos
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer bg-dark-realm border-top border-realm">
+            <button
+              class="btn btn-outline-secondary btn-sm"
+              data-bs-dismiss="modal"
+              type="button"
+            >
+              Fechar
+            </button>
+            <button class="btn btn-danger btn-sm" type="button">
+              <i class="bi bi-feather me-1"></i> Editar Registro
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 6. Rodapé Padronizado Bootstrap -->
+    <footer class="bg-dark-realm border-top border-realm mt-auto">
+      <div class="container text-center py-4">
+        <p class="font-serif fs-5 text-muted-realm fst-italic mb-3">
+          "The realms are deep and full of shadows."
+        </p>
+        <div class="d-flex justify-content-center gap-3 fs-5 mb-3">
+          <a class="text-muted-realm text-decoration-none hover-danger" href="#"
+            ><i class="bi bi-shield-slash"></i
+          ></a>
+          <a class="text-muted-realm text-decoration-none hover-danger" href="#"
+            ><i class="bi bi-fire"></i
+          ></a>
+          <a class="text-muted-realm text-decoration-none hover-danger" href="#"
+            ><i class="bi bi-skull"></i
+          ></a>
+        </div>
+        <p class="small text-muted-realm text-uppercase tracking-wider m-0">
+          © 2024 NPCRealm. Forged in Darkness.
+        </p>
+      </div>
+    </footer>
+    <!-- Bootstrap 5.3.3 Bundle JS -->
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script para preenchimento dinâmico do Modal -->
+    <script>
+      function setModalData(
+        name,
+        title,
+        charClass,
+        hp,
+        gear,
+        stats,
+        bio,
+        imgUrl,
+      ) {
+        document.getElementById("modalCharacterName").textContent = name;
+        document.getElementById("modalCharacterTitle").textContent = title;
+        document.getElementById("modalCharacterClass").textContent = charClass;
+        document.getElementById("modalCharacterHp").textContent = hp;
+        document.getElementById("modalCharacterGear").textContent = gear;
+        document.getElementById("modalCharacterStats").textContent = stats;
+        document.getElementById("modalCharacterBio").textContent = bio;
+        document.getElementById("modalCharacterImg").src = imgUrl;
+      }
+    </script>
+  </body>
 </html>
