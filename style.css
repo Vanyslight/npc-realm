@@ -4,7 +4,7 @@
    Páginas: Login, Forja, Obra, Index
    ========================================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap");
 
 /* --------------------------------------------------------------------------
    1. TOKENS
@@ -40,7 +40,7 @@
   --error: #ffb4ab;
 
   /* Tipografia */
-  --font-serif: "EB Garamond", Georgia, serif;
+  --font-serif: "Crimson Text", Georgia, serif;
   --font-sans: "Hanken Grotesk", system-ui, sans-serif;
 
   /* Formas */
