@@ -294,29 +294,5 @@
     </footer>
     <!-- Bootstrap 5.3.3 JS Bundle -->
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const isAuthenticated = localStorage.getItem("npcRealm_token");
-        const exploreButtons = document.querySelectorAll(".btn-realm");
-
-        exploreButtons.forEach((btn) => {
-          btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            if (!isAuthenticated) {
-              const originalText = btn.innerText;
-              btn.innerText = "Requer Login";
-              btn.classList.add("bg-danger", "text-white");
-
-              setTimeout(() => {
-                btn.innerText = originalText;
-                btn.classList.remove("bg-danger", "text-white");
-              }, 2000);
-            } else {
-              console.log("Navegando para o reino...");
-            }
-          });
-        });
-      });
-    </script>
   </body>
 </html>
