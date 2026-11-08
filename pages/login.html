@@ -20,7 +20,7 @@
   <body>
     <div class="container py-5">
       <div class="row justify-content-center">
-        <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4">
+        <div class="col-11">
           <!-- Grimdark Card -->
           <div class="card grimdark-card shadow-lg">
             <div class="card-body p-4 p-md-5">
@@ -136,6 +136,11 @@
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const loginParam = urlParams.get("login");
+        if (loginParam) {
+          document.getElementById("guardianName").value = loginParam;
+        }
         const form = document.getElementById("realmLoginForm");
         const passwordInput = document.getElementById("codexPassword");
         const toggleBtn = document.getElementById("btnTogglePassword");
@@ -175,12 +180,7 @@
                 }),
               );
 
-              setTimeout(() => {
-                submitBtn.classList.remove("btn-blood-realm");
-                submitBtn.classList.add("btn-success");
-                submitBtn.innerHTML =
-                  '<i class="bi bi-check-circle-fill"></i> Portões Abertos';
-              }, 1200);
+              window.location.href = "/index.html";
             }
 
             form.classList.add("was-validated");
